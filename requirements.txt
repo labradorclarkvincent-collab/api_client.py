@@ -1,0 +1,12 @@
+import requests
+name = input(&quot;Enter your first name: &quot;)
+url = &quot;https://YOUR-URL.onrender.com/hello&quot;
+params = {&quot;name&quot;: name}
+response = requests.get(url, params=params)
+if response.status_code == 200:
+data = response.json()
+print(data[&quot;message&quot;])
+
+else:
+print(&quot;Request failed.&quot;)
+print(&quot;Status Code:&quot;, response.status_code)
